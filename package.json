@@ -1,0 +1,83 @@
+{
+  "name": "babel-plugin-styled-jss",
+  "version": "0.0.0",
+  "description": "Babel Plugin for styled-jss",
+  "scripts": {
+    "clean": "rimraf lib/*",
+    "lint": "eslint src",
+    "lint:staged": "lint-staged",
+    "flow": "flow check",
+    "test": "jest",
+    "test:watch": "npm test -- --watch",
+    "test:coverage": "npm test -- --coverage",
+    "prebuild": "npm run clean && npm run flow && npm run lint",
+    "build": "babel src --out-dir lib --ignore tests",
+    "flow:typed": "flow-typed install",
+    "flow:stub": "flow-typed create-stub",
+    "preversion": "npm run build",
+    "postversion": "git push --follow-tags && npm publish"
+  },
+  "files": [
+    "src",
+    "lib"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lttb/babel-plugin-styled-jss.git"
+  },
+  "keywords": [
+    "jss",
+    "styled",
+    "react",
+    "styled-components",
+    "primitives",
+    "babel",
+    "babel-plugin",
+    "styled-jss"
+  ],
+  "author": "lttb <kenzhaev.artur@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lttb/babel-plugin-styled-jss/issues"
+  },
+  "homepage": "https://github.com/lttb/babel-plugin-styled-jss#readme",
+  "dependencies": {
+    "babel-template": "^6.24.1",
+    "prejss-postcss-parser": "^0.3.2",
+    "strip-indent": "^2.0.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.23.0",
+    "babel-core": "^6.24.1",
+    "babel-eslint": "^7.2.2",
+    "babel-plugin-syntax-jsx": "^6.18.0",
+    "babel-plugin-transform-class-properties": "^6.23.0",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.23.0",
+    "babel-plugin-transform-flow-strip-types": "^6.22.0",
+    "babel-plugin-transform-object-rest-spread": "^6.23.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.23.0",
+    "eslint": "^3.13.0",
+    "eslint-config-airbnb": "^14.1.0",
+    "eslint-config-jss": "^3.0.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^4.0.0",
+    "eslint-plugin-react": "^6.10.3",
+    "flow-bin": "^0.44.2",
+    "flow-typed": "^2.0.0",
+    "jest": "^18.1.0",
+    "lint-staged": "^3.4.0",
+    "pre-commit": "^1.2.2",
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4",
+    "react-test-renderer": "^15.4.2",
+    "rimraf": "^2.6.1"
+  },
+  "lint-staged": {
+    "./src": [
+      "eslint",
+      "git add"
+    ]
+  },
+  "pre-commit": "lint:staged"
+}
