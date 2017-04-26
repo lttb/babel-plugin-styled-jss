@@ -9,7 +9,7 @@ module.exports = ({types: t}) => {
   let config
 
   const styledNames = new Set('styled')
-  let StyledName
+  const StyledNames = new Set('Styled')
 
   return {
     pre() {
@@ -32,14 +32,42 @@ module.exports = ({types: t}) => {
 
         const StyledNode = imports.find(({imported}) => imported.name === 'Styled')
         if (StyledNode) {
-          StyledName = StyledNode.local.name
+          StyledNames.add(StyledNode.local.name)
         }
       },
 
       CallExpression(p) {
         const {callee, arguments: args} = p.node
 
-        if (callee.name === StyledName) {
+        if (callee.name === 'require') {
+          if (!(args[0] && args[0].value === 'styled-jss')) return
+          let id
+
+          if (p.parentPath.node.type === 'MemberExpression') {
+            id = p.parentPath.parentPath.node.id
+          }
+          else {
+            id = p.parentPath.node.id
+          }
+
+          if (id.type === 'Identifier') {
+            styledNames.add(id.name)
+          }
+          else if (id.type === 'ObjectPattern') {
+            id.properties.some((node) => {
+              if (node.key.name === 'Styled') {
+                StyledNames.add(node.value.name)
+                return true
+              }
+
+              return false
+            })
+          }
+
+          return
+        }
+
+        if (StyledNames.has(callee.name)) {
           styledNames.add(p.parentPath.node.id.name)
           return
         }
