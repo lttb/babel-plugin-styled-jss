@@ -47,20 +47,20 @@ const Button = styled.button({
 `babel-plugin-styled-jss` can recognize this patterns:
 
 ```js
-  import styled, {Styled} from 'styled-jss'
+import styled, {Styled} from 'styled-jss'
 
-  const Button = styled.button({
-    color: 'blue'
-  })
+const Button = styled.button({
+  color: 'blue'
+})
 
-  const scoped = Styled({
-    baseButton: {
-      color: 'green'
-    }
-  })
-  const AnotherButton = scoped.button({
-    composes: '$baseButton'
-  })
+const scoped = Styled({
+  baseButton: {
+    color: 'green'
+  }
+})
+const AnotherButton = scoped.button({
+  composes: '$baseButton'
+})
 ```
 
 And you can also use DI for example, but you need to name it as `styled`:
