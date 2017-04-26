@@ -1,6 +1,9 @@
-# babel-plugin-styled-jss
+<a href="https://github.com/cssinjs/styled-jss">
+  <img alt="styled-jss" src="https://github.com/cssinjs/logo/blob/master/styled-jss-logo.png" height="150px" />
+</a>
 
-Created on top of [PreJSS](https://github.com/axept/prejss)
+# babel-plugin-styled-jss
+Created on top of [PreJSS](https://github.com/axept/prejss).
 
 ## Install
 
@@ -21,14 +24,14 @@ This plugin transforms
 ```js
 const Button = styled.button`
   padding: 10;
-  color: ${color => color}
+  color: ${({color}) => color}
 `
 ```
 to
 ```js
 const Button = styled('button', {
   padding: 10,
-  color: color => color
+  color: ({color}) => color
 })
 ```
 
@@ -46,9 +49,18 @@ const Button = styled.button({
 ```js
   import styled, {Styled} from 'styled-jss'
 
-  const scoped = Styled({baseButton: {color: 'blue'}})
-  const Button = styled.button({color: 'red'})
-  const AnotherButton = scoped.button({composes: '$baseButton'})
+  const Button = styled.button({
+    color: 'blue'
+  })
+
+  const scoped = Styled({
+    baseButton: {
+      color: 'green'
+    }
+  })
+  const AnotherButton = scoped.button({
+    composes: '$baseButton'
+  })
 ```
 
 And you can also use DI for example, but you need to name it as `styled`:
@@ -60,6 +72,7 @@ export default (styled) => {
 ```
 
 ## Links
+- [styled-jss](https://github.com/cssinjs/styled-jss)
 - [PreJSS](https://github.com/axept/prejss)
 
 ## License
