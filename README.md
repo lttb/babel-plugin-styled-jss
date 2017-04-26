@@ -3,7 +3,7 @@
 </a>
 
 # babel-plugin-styled-jss
-Created on top of [PreJSS](https://github.com/axept/prejss).
+This plugin created for [styled-jss](https://github.com/cssinjs/styled-jss) on top of [PreJSS](https://github.com/axept/prejss).
 
 ## Install
 
