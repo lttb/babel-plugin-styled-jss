@@ -2,6 +2,7 @@
   "name": "babel-plugin-styled-jss",
   "version": "1.0.0",
   "description": "Babel Plugin for styled-jss",
+  "main": "./lib/index.js",
   "scripts": {
     "clean": "rimraf lib/*",
     "lint": "eslint src",
