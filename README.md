@@ -47,6 +47,8 @@ const Button = styled.button({
 `babel-plugin-styled-jss` can recognize this patterns:
 
 ```js
+// you can also use your custom names like:
+// import styledCustom from 'styled-jss'
 import styled, {Styled} from 'styled-jss'
 
 const Button = styled.button({
