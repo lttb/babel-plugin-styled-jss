@@ -4,39 +4,39 @@ import styled, { Styled } from 'styled-jss';
 
 const scoped = Styled();
 
-const App = styled('div', {
+const App = styled('div')({
   margin: "50"
 });
 
-const Header = styled('header', {
+const Header = styled('header')({
   padding: "10"
 });
 
-const Section = styled('section', {
+const Section = styled('section')({
   color: "red"
 });
 
-const AnotherSection = styled(Section, {
+const AnotherSection = styled(Section)({
   color: "yellow"
 });
 
-const Title = styled('h1', {
+const Title = styled('h1')({
   color: "red"
 });
 
 const test = 'test';
-const Button = styled('button', {
+const Button = styled('button')({
   margin: ({ margin = 0 }) => margin,
   [\`& + & + \${test}\`]: {
     color: () => {}
   }
 });
 
-const ScopedButton = scoped('button', {
+const ScopedButton = scoped('button')({
   color: "green"
 });
 
-const ButtonByObject = styled('button', { color: 'red' });
+const ButtonByObject = styled('button')({ color: 'red' });
 
 export default (() => <App>
     <Header>

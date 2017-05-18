@@ -78,10 +78,10 @@ module.exports = ({types: t}) => {
 
         const {object, property} = callee
 
-        p.replaceWith(t.callExpression(t.toExpression(object), [
-          t.stringLiteral(property.name),
-          ...args
-        ]))
+        p.replaceWith(t.callExpression(
+          t.callExpression(t.toExpression(object), [t.stringLiteral(property.name)]),
+          [...args]
+        ))
       },
 
       TaggedTemplateExpression(p) {
@@ -130,10 +130,10 @@ module.exports = ({types: t}) => {
 
         const res = template(`(${jssObjectString})`)(values)
 
-        p.replaceWith(t.callExpression(t.toExpression(callee), [
-          elem,
-          res.expression
-        ]))
+        p.replaceWith(t.callExpression(
+          t.callExpression(t.toExpression(callee), [elem]),
+          [res.expression]
+        ))
       },
     },
   }

@@ -72,7 +72,8 @@
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
     "react-test-renderer": "^15.4.2",
-    "rimraf": "^2.6.1"
+    "rimraf": "^2.6.1",
+    "styled-jss": "^1.0.0"
   },
   "lint-staged": {
     "./src": [

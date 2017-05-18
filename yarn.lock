@@ -749,10 +749,6 @@ babel-types@^6.18.0, babel-types@^6.19.0, babel-types@^6.23.0, babel-types@^6.24
     lodash "^4.2.0"
     to-fast-properties "^1.0.1"
 
-babel@^6.23.0:
-  version "6.23.0"
-  resolved "https://registry.yarnpkg.com/babel/-/babel-6.23.0.tgz#d0d1e7d803e974765beea3232d4e153c0efb90f4"
-
 babylon@^6.11.0, babylon@^6.13.0, babylon@^6.15.0, babylon@^6.16.1:
   version "6.17.0"
   resolved "https://registry.yarnpkg.com/babylon/-/babylon-6.17.0.tgz#37da948878488b9c4e3c4038893fa3314b3fc932"
@@ -2085,9 +2081,9 @@ is-property@^1.0.0:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/is-property/-/is-property-1.0.2.tgz#57fe1c4e48474edd65b09911f26b1cd4095dda84"
 
-is-react-prop@^0.0.3:
-  version "0.0.3"
-  resolved "https://registry.yarnpkg.com/is-react-prop/-/is-react-prop-0.0.3.tgz#cc95ae900174eca57a17ef955aba49ac8942620b"
+is-react-prop@^0.1.2:
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/is-react-prop/-/is-react-prop-0.1.2.tgz#b22fbcf6190e91e81939132a110bb94642b56903"
 
 is-regex@^1.0.3:
   version "1.0.4"
@@ -2546,9 +2542,9 @@ jss-vendor-prefixer@^5.0.0:
   dependencies:
     css-vendor "^0.3.8"
 
-jss@^7.1.0:
-  version "7.1.0"
-  resolved "https://registry.yarnpkg.com/jss/-/jss-7.1.0.tgz#8528213f868f05d0ef41deaeb02269bb82780e4b"
+jss@^7.1.1:
+  version "7.1.2"
+  resolved "https://registry.yarnpkg.com/jss/-/jss-7.1.2.tgz#f927fa5a06bf0a309a3e9e92f00b3aebfe3ab27d"
   dependencies:
     is-in-browser "1.0.2"
     warning "3.0.0"
@@ -3773,12 +3769,12 @@ strip-json-comments@~2.0.1:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/strip-json-comments/-/strip-json-comments-2.0.1.tgz#3c531942e908c2697c0ec344858c286c7ca0a60a"
 
-styled-jss@^0.3.1:
-  version "0.3.1"
-  resolved "https://registry.yarnpkg.com/styled-jss/-/styled-jss-0.3.1.tgz#d24991e0547960cc5ab2798ea13265adefbd40b2"
+styled-jss@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/styled-jss/-/styled-jss-1.0.0.tgz#327a8a00eb30f94a55ffbf54a4a88037e41f25ce"
   dependencies:
-    is-react-prop "^0.0.3"
-    jss "^7.1.0"
+    is-react-prop "^0.1.2"
+    jss "^7.1.1"
     jss-preset-default "^2.0.0"
 
 supports-color@^2.0.0:
