@@ -29,7 +29,7 @@ const Button = styled.button`
 ```
 to
 ```js
-const Button = styled('button', {
+const Button = styled('button')({
   padding: 10,
   color: ({color}) => color
 })
